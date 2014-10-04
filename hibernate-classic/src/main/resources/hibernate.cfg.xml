@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://127.0.0.1:5432/sample</property>
+        <property name="hibernate.connection.username">buttercup</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <property name="hibernate.generate_statistics">true</property>        
+        <property name="use_sql_comments">true</property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">validate</property>
+
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+        <!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> -->
+        <property name="hibernate.cache.region.factory_class">com.hazelcast.hibernate.HazelcastCacheRegionFactory</property>
+        <property name="hibernate.cache.use_minimal_puts">true</property>
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="c3p0.acquire_increment">1</property>
+        <property name="c3p0.idle_test_period">100</property>
+        <property name="c3p0.max_size">100</property>
+        <property name="c3p0.max_statements">0</property>
+        <property name="c3p0.min_size">10</property>
+        <property name="c3p0.timeout">100</property>
+
+        <mapping resource="Car.hbm.xml" />
+        <mapping resource="Driver.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>
