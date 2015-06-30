@@ -35,7 +35,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.14.8</version>
+            <version>1.16.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -65,7 +65,7 @@
                 <configuration>
                     <compilerId>groovy-eclipse-compiler</compilerId>
                     <compilerArguments>
-                        <javaAgentClass>lombok.core.Agent</javaAgentClass>
+                        <javaAgentClass>lombok.launch.Agent</javaAgentClass>
                     </compilerArguments>
                     <fork>true</fork>
                 </configuration>
@@ -83,7 +83,7 @@
                     <dependency>
                         <groupId>org.projectlombok</groupId>
                         <artifactId>lombok</artifactId>
-                        <version>1.14.8</version>
+                        <version>1.16.4</version>
                     </dependency>
                 </dependencies>
             </plugin>
