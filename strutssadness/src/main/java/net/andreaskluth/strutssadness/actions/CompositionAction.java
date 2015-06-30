@@ -1,42 +1,45 @@
 package net.andreaskluth.strutssadness.actions;
 
-import lombok.Data;
-
 import com.opensymphony.xwork2.ActionSupport;
+
+import lombok.Data;
 
 public class CompositionAction extends ActionSupport {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  private MessageStore messageStore;
+    private MessageStore messageStore;
 
-  private String userName;
+    private String userName;
 
-  
-  public String execute() throws Exception {
-    messageStore = new MessageStore();
-    return SUCCESS;
-  }
+    public CompositionAction() {
+        // Noop
+    }
 
-  public MessageStore getMessageStore() {
-    return messageStore;
-  }
+    public String execute() throws Exception {
+        messageStore = new MessageStore();
+        return SUCCESS;
+    }
 
-  public void setMessageStore(MessageStore messageStore) {
-    this.messageStore = messageStore;
-  }
+    public MessageStore getMessageStore() {
+        return messageStore;
+    }
 
-  public String getUserName() {
-    return userName;
-  }
+    public void setMessageStore(MessageStore messageStore) {
+        this.messageStore = messageStore;
+    }
 
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
+    public String getUserName() {
+        return userName;
+    }
 
-  @Data
-  public class MessageStore {
-    private String message;
-  }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    @Data
+    public class MessageStore {
+        private String message;
+    }
 
 }
