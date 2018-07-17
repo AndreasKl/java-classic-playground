@@ -1,4 +1,4 @@
-FROM mbe1224/debian-oracle-java:jessie-slim-jdk8
+FROM mbe1224/debian-oracle-java:stretch-slim-jre8
 
 COPY maven/ /
 
